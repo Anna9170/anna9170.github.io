@@ -15,7 +15,7 @@
       overflow-x: hidden;
     }
 
-    /* striped side panels */
+    /* full-height stripes exactly 5cm from each side of the image */
     .stripe-left, .stripe-right {
       position: fixed;
       top: 0;
@@ -32,14 +32,13 @@
     }
 
     .stripe-left {
-      left: calc(50% - 400px - 5cm);
+      left: calc(50% - 400px - 5cm); /* image is 800px wide, centered */
     }
 
     .stripe-right {
-      right: calc(50% - 400px - 5cm);
+      left: calc(50% + 400px); /* directly after the right edge of the image */
     }
 
-    /* main image */
     img.main-image {
       width: 800px;
       border: 5px solid black;
@@ -51,7 +50,7 @@
       color: #333;
     }
 
-    /* decorative side photos */
+    /* optional: semi-transparent photos on plain sides */
     .side-photo {
       position: fixed;
       top: 20%;
@@ -70,11 +69,11 @@
   </style>
 </head>
 <body>
-  <!-- Striped Panels -->
+  <!-- Full-height stripe panels exactly beside the image -->
   <div class="stripe-left"></div>
   <div class="stripe-right"></div>
 
-  <!-- Decorative Photos -->
+  <!-- Optional Decorative Photos -->
   <img src="side1.jpg" alt="Decorative Left" class="side-photo left">
   <img src="side2.jpg" alt="Decorative Right" class="side-photo right">
 
