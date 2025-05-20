@@ -9,12 +9,41 @@
             font-family: Arial, sans-serif; 
             text-align: center;
             padding: 50px;
-            background-image: repeating-linear-gradient(
-                60deg,
-                #f8dc50,
-                #f8dc50 80px,
-                #23c723 80px,
-                #23c723 160px
+            position: relative;
+            background-color: white; /* fallback */
+            z-index: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                linear-gradient(to right, 
+                    #f8dc50 0cm, 
+                    #f8dc50 5cm, 
+                    transparent 5cm, 
+                    transparent calc(100% - 5cm), 
+                    #f8dc50 calc(100% - 5cm), 
+                    #f8dc50 100%);
+            mask-image: repeating-linear-gradient(
+                45deg,
+                #000,
+                #000 80px,
+                transparent 80px,
+                transparent 160px
+            );
+            -webkit-mask-image: repeating-linear-gradient(
+                45deg,
+                #000,
+                #000 80px,
+                transparent 80px,
+                transparent 160px
             );
         }
         h1 {
