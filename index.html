@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title> 
-    <style> 
-        body {
-            font-family: Arial, sans-serif; 
-            text-align: center;
-            padding: 50px;
-            position: relative;
-            background-color: white; /* fallback */
-            z-index: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title> 
+  <style> 
+    body {
+      font-family: Arial, sans-serif; 
+      text-align: center;
+      padding: 50px;
+      background-color: white;
+    }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100%;
-            pointer-events: none;
-            z-index: -1;
-            background:
-                linear-gradient(to right, 
-                    #f8dc50 0cm, 
-                    #f8dc50 5cm, 
-                    transparent 5cm, 
-                    transparent calc(100% - 5cm), 
-                    #f8dc50 calc(100% - 5cm), 
-                    #f8dc50 100%);
-            mask-image: repeating-linear-gradient(
-                45deg,
-                #000,
-                #000 80px,
-                transparent 80px,
-                transparent 160px
-            );
-            -webkit-mask-image: repeating-linear-gradient(
-                45deg,
-                #000,
-                #000 80px,
-                transparent 80px,
-                transparent 160px
-            );
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+    /* frame around the image with 5cm striped sides */
+    .striped-frame {
+      position: relative;
+      display: inline-block;
+      margin: 2rem auto; /* adjust vertical spacing as needed */
+    }
+    .striped-frame::before,
+    .striped-frame::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 5cm;
+      height: 100%;
+      background-image: repeating-linear-gradient(
+        45deg,
+        #f8dc50,
+        #f8dc50 80px,
+        #23c723 80px,
+        #23c723 160px
+      );
+      z-index: -1;
+    }
+    .striped-frame::before {
+      left: -5cm;
+    }
+    .striped-frame::after {
+      right: -5cm;
+    }
+
+    /* optional: style the image itself */
+    .striped-frame img {
+      display: block;
+      border: 5px solid black;
+      width: 800px; /* or keep your inline width */
+    }
+
+    h1 {
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is a sample page hosted on GitHub Pages.</p>
-    <img src="drawing.PNG" alt="hahaha" width="800" style="border: 5px solid black; margin: 10cm;">
+  <h1>Welcome to My Website!</h1>
+  <p>This is a sample page hosted on GitHub Pages.</p>
+
+  <div class="striped-frame">
+    <img src="drawing.PNG" alt="hahaha">
+  </div>
 </body>
 </html>
