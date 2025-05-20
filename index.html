@@ -10,21 +10,17 @@
       text-align: center;
       padding: 50px;
       background-color: white;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    /* frame around the image with 5cm striped sides */
-    .striped-frame {
-      position: relative;
-      display: inline-block;
-      margin: 2rem auto; /* adjust vertical spacing as needed */
-    }
-    .striped-frame::before,
-    .striped-frame::after {
-      content: "";
-      position: absolute;
+    /* full-height stripe bars left and right of image */
+    .stripe-left, .stripe-right {
+      position: fixed;
       top: 0;
+      height: 100vh;
       width: 5cm;
-      height: 100%;
       background-image: repeating-linear-gradient(
         45deg,
         #f8dc50,
@@ -34,18 +30,20 @@
       );
       z-index: -1;
     }
-    .striped-frame::before {
-      left: -5cm;
-    }
-    .striped-frame::after {
-      right: -5cm;
+
+    .stripe-left {
+      left: calc(50% - 400px - 5cm); /* image centered, minus half width and 5cm stripe */
     }
 
-    /* optional: style the image itself */
-    .striped-frame img {
-      display: block;
+    .stripe-right {
+      right: calc(50% - 400px - 5cm);
+    }
+
+    img {
+      width: 800px;
       border: 5px solid black;
-      width: 800px; /* or keep your inline width */
+      margin: 5cm auto;
+      display: block;
     }
 
     h1 {
@@ -54,11 +52,11 @@
   </style>
 </head>
 <body>
+  <div class="stripe-left"></div>
+  <div class="stripe-right"></div>
+
   <h1>Welcome to My Website!</h1>
   <p>This is a sample page hosted on GitHub Pages.</p>
-
-  <div class="striped-frame">
-    <img src="drawing.PNG" alt="hahaha">
-  </div>
+  <img src="drawing.PNG" alt="hahaha">
 </body>
 </html>
