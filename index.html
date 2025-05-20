@@ -15,7 +15,7 @@
       overflow-x: hidden;
     }
 
-    /* full-height stripe bars left and right of image */
+    /* striped side panels */
     .stripe-left, .stripe-right {
       position: fixed;
       top: 0;
@@ -32,14 +32,15 @@
     }
 
     .stripe-left {
-      left: calc(50% - 400px - 5cm); /* image centered, minus half width and 5cm stripe */
+      left: calc(50% - 400px - 5cm);
     }
 
     .stripe-right {
       right: calc(50% - 400px - 5cm);
     }
 
-    img {
+    /* main image */
+    img.main-image {
       width: 800px;
       border: 5px solid black;
       margin: 5cm auto;
@@ -49,14 +50,37 @@
     h1 {
       color: #333;
     }
+
+    /* decorative side photos */
+    .side-photo {
+      position: fixed;
+      top: 20%;
+      width: 100px;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .side-photo.left {
+      left: 1cm;
+    }
+
+    .side-photo.right {
+      right: 1cm;
+    }
   </style>
 </head>
 <body>
+  <!-- Striped Panels -->
   <div class="stripe-left"></div>
   <div class="stripe-right"></div>
 
+  <!-- Decorative Photos -->
+  <img src="side1.jpg" alt="Decorative Left" class="side-photo left">
+  <img src="side2.jpg" alt="Decorative Right" class="side-photo right">
+
+  <!-- Main Content -->
   <h1>Welcome to My Website!</h1>
   <p>This is a sample page hosted on GitHub Pages.</p>
-  <img src="drawing.PNG" alt="hahaha">
+  <img src="drawing.PNG" alt="hahaha" class="main-image">
 </body>
 </html>
