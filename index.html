@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-  document.write('<style>body{display:none;}</style>'); // Hide body before check
+  document.write('<style>body { display: none; }</style>'); // Hide content initially
 
   const correctPassword = "23092005";
-  const userInput = prompt("Enter password(again):");
+  let userInput;
 
-  if (userInput === correctPassword) {
-    document.write('<style>body{display:flex;}</style>'); // Reveal content
-  } else {
-    document.write(`
-      <style>body{display:flex; justify-content:center; align-items:center; background:#f8dc50; font-family:Georgia, serif;}</style>
-      <body>
-        <h1 style="color:#90500f;">Access denied.</h1>
-      </body>
-    `);
+  while (true) {
+    userInput = prompt("Enter password(Hihihhi):");
+
+    if (userInput === correctPassword) {
+      document.write('<style>body { display: flex; }</style>'); // Show the page
+      break;
+    } else {
+      alert("Access denied. Try again.");
+    }
   }
 </script>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
