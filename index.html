@@ -59,6 +59,21 @@
     p {
       margin-bottom: 1rem;
     }
+
+    #rating-stars button {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      margin: 0.3rem;
+      cursor: pointer;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    
+    #rating-stars button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
   </style>
 </head>
 <script>
@@ -104,16 +119,15 @@
     <p style="margin-top: 5rem;font-size: 2rem; font-style: italic; color: #90500f;">[END]</p>
 
     <div style="margin-top: 10rem; text-align: center;">
-      <p style="font-size: 1.5rem;">How would you rate this website?</p>
+      <p style="font-size: 1.8rem; font-weight: bold; color: #333;">How would you rate this website?</p>
       <div id="rating-stars">
         <button onclick="rate(1)">⭐</button>
-        <button onclick="rate(2)">⭐⭐</button>
-        <button onclick="rate(3)">⭐⭐⭐</button>
-        <button onclick="rate(4)">⭐⭐⭐⭐</button>
-        <button onclick="rate(5)">⭐⭐⭐⭐⭐</button>
+        <button onclick="rate(2)">⭐</button>
+        <button onclick="rate(3)">⭐</button>
+        <button onclick="rate(4)">⭐</button>
+        <button onclick="rate(5)">⭐</button>
       </div>
     </div>
-
   </div>
 </body>
 </html>
